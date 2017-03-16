@@ -1,0 +1,21 @@
+{
+  "name": "RetireUp Code Test",
+  "version": "1.0.0",
+  "description": "Simple starter package for Redux with React and Babel support",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "rc-slider": "^6.2.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5"
+  }
+}
