@@ -4,7 +4,8 @@ export const Legend = ({ capPercent, startYear, endYear }) => {
 
     const styles = {
         wrapper: {
-            margin: 50
+            marginLeft: 150,
+            marginRight: 50
         },
         legendEntry: {
                 width: 50,

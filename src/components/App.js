@@ -13,9 +13,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      capPercent: 5,
-      startYear: 2000,
-      endYear: 2008
+      capPercent: 0,
+      startYear: null,
+      endYear: null
     };
 
     this.updateCapPercent = this.updateCapPercent.bind(this);
@@ -47,11 +47,19 @@ class App extends Component {
         <PeriodSelector minYear={(new Date().getFullYear()) - 21}
                         maxYear={(new Date().getFullYear()) - 1}
                         onSelectorChange={this.updatePeriod}  />
-        <BalanceGraph capPercent={this.state.capPercent} 
-                      startYear={this.state.startYear} 
-                      endYear={this.state.endYear}
-                      data={this.props.data} />
-        <Legend />
+        {(this.state.capPercent > 0 && this.state.startYear && this.state.endYear && this.state.startYear !== this.state.endYear) ?
+        <div>
+          <BalanceGraph capPercent={this.state.capPercent} 
+                        startYear={this.state.startYear} 
+                        endYear={this.state.endYear}
+                        data={this.props.data} />
+          <Legend />
+        </div>
+        :
+        <div className="invalid-entry">
+          <h3>Please select a cap percentage, start and end year</h3>
+        </div>
+        }
       </div>
     );
   }
