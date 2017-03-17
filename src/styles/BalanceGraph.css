@@ -1,12 +1,17 @@
+ .graph-wrapper {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
 svg {
     margin-left: 90px;
     margin-top: -40px;
     border: 1px solid #999;
 }
 
-
 /* Fix for ie svg issues */
-
 @media screen and (-ms-high-contrast: active),
 (-ms-high-contrast: none) {
     svg {

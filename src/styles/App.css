@@ -5,7 +5,7 @@
 
 .rc-slider {
   margin-left: 90px;
-  width: inherit;
+  width: inherit !important;
 }
 
 .rc-slider-tooltip-inner {

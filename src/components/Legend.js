@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Creates the legend at the bottom of the graph
 export const Legend = ({ capPercent, startYear, endYear }) => {
 
     const styles = {

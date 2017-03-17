@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
 import './styles/index.css';
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './components/App';
+
+// Hard coded data for now
 var data = [
     { "year": 2016, "price": 2275.12 },
     { "year": 2015, "price": 1918.60 },
@@ -27,6 +30,7 @@ var data = [
     { "year": 1996, "price": 766.22 }
 ];
 
+// Render the main application node
 ReactDOM.render(
   <App data={data} />,
   document.getElementById('root')
