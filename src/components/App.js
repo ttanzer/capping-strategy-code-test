@@ -13,9 +13,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      capPercent: null,
-      startYear: null,
-      endYear: null
+      capPercent: 5,
+      startYear: 2000,
+      endYear: 2008
     };
 
     this.updateCapPercent = this.updateCapPercent.bind(this);
@@ -44,8 +44,8 @@ class App extends Component {
         <CapSelector minPercent={0}
                      maxPercent={25}
                      onSelectorChange={this.updateCapPercent} />
-        <PeriodSelector minYear={(new Date().getFullYear()) - 20}
-                        maxYear={(new Date().getFullYear())}
+        <PeriodSelector minYear={(new Date().getFullYear()) - 21}
+                        maxYear={(new Date().getFullYear()) - 1}
                         onSelectorChange={this.updatePeriod}  />
         <BalanceGraph capPercent={this.state.capPercent} 
                       startYear={this.state.startYear} 

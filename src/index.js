@@ -4,9 +4,9 @@ import App from './components/App';
 import './styles/index.css';
 
 var data = [
-    { "2016": 2275.12 },
-    { "2015": 1918.60 },
-    { "2014": 2028.18 }/*,
+    { "year": 2016, "price": 2275.12 },
+    { "year": 2015, "price": 1918.60 },
+    { "year": 2014, "price": 2028.18 },
     { "year": 2013, "price": 1822.36 },
     { "year": 2012, "price": 1480.40 },
     { "year": 2011, "price": 1300.58 },
@@ -24,7 +24,7 @@ var data = [
     { "year": 1999, "price": 1425.59 },
     { "year": 1998, "price": 1248.77 },
     { "year": 1997, "price": 963.36 },
-    { "year": 1996, "price": 766.22 }*/
+    { "year": 1996, "price": 766.22 }
 ];
 
 ReactDOM.render(
