@@ -3,3 +3,15 @@ svg {
     margin-top: -40px;
     border: 1px solid #999;
 }
+
+
+/* Fix for ie svg issues */
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    svg {
+        height: 400px;
+        width: 800px;
+        margin-top: 0;
+    }
+}

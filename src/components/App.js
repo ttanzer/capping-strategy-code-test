@@ -1,11 +1,12 @@
+import '../styles/App.css';
+
 import React, { Component } from 'react';
 
 import { CapSelector } from './CapSelector';
 import { PeriodSelector } from './PeriodSelector';
 import { BalanceGraph } from './BalanceGraph';
 import { Legend } from './Legend';
-
-import '../styles/App.css';
+import { SegmentSummary } from './SegmentSummary';
 
 class App extends Component {
 
@@ -36,6 +37,11 @@ class App extends Component {
   }
 
   render() {
+
+    var { startYear, endYear, capPercent } = this.state;
+
+    console.log("startYear", startYear);
+
     return (
       <div className="App">
         <div className="App-header">
@@ -47,11 +53,11 @@ class App extends Component {
         <PeriodSelector minYear={(new Date().getFullYear()) - 21}
                         maxYear={(new Date().getFullYear()) - 1}
                         onSelectorChange={this.updatePeriod}  />
-        {(this.state.capPercent > 0 && this.state.startYear && this.state.endYear && this.state.startYear !== this.state.endYear) ?
+        {(capPercent > 0 && startYear && endYear && startYear !== endYear) ?
         <div>
-          <BalanceGraph capPercent={this.state.capPercent} 
-                        startYear={this.state.startYear} 
-                        endYear={this.state.endYear}
+          <BalanceGraph capPercent={capPercent} 
+                        startYear={startYear} 
+                        endYear={endYear}
                         data={this.props.data} />
           <Legend />
         </div>
