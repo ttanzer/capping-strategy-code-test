@@ -9,7 +9,7 @@
 }
 
 .rc-slider-tooltip-inner {
-  background-color: #307eae;
+  background-color: #307eae !important;
 }
 
 .rc-slider-tooltip-arrow {
@@ -17,8 +17,8 @@
 }
 
 .rc-slider-handle {
-  border: solid 2px #307eae;
-  background-color: #307eae;
+  border: solid 2px #307eae !important;
+  background-color: #307eae !important;
 }
 
 .slider-label {
