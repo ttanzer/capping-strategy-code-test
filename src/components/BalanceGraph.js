@@ -7,6 +7,7 @@ export const BalanceGraph = ({ capPercent, startYear, endYear }) => {
             <div>capPercent: {capPercent}</div>
             <div>startYear: {startYear}</div>
             <div>endYear: {endYear}</div>
+            <div>years: </div>
         </div>
     );
 

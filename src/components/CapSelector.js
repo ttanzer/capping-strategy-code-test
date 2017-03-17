@@ -8,10 +8,11 @@ import Slider from 'rc-slider';
 const SliderWithTip = Slider.createSliderWithTooltip(Slider);
 
 export const CapSelector = ({ minPercent, maxPercent, onSelectorChange }) => {
-    const wrapperStyle = { width: 400, margin: 50 };
+    const wrapperStyle = {  margin: 50 };
 
     return (
         <div style={wrapperStyle}>
+            <h3 className="slider-label">Cap</h3>
             <SliderWithTip className="cap-selector" 
                            min={minPercent} 
                            max={maxPercent} 

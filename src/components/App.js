@@ -49,7 +49,8 @@ class App extends Component {
                         onSelectorChange={this.updatePeriod}  />
         <BalanceGraph capPercent={this.state.capPercent} 
                       startYear={this.state.startYear} 
-                      endYear={this.state.endYear} />
+                      endYear={this.state.endYear}
+                      data={this.props.data} />
         <Legend />
       </div>
     );

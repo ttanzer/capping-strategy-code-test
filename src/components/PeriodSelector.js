@@ -5,12 +5,16 @@ const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
 
 export const PeriodSelector = ({ minYear, maxYear, onSelectorChange }) => {
+    const wrapperStyle = {  margin: 50 };
 
     return (
-        <Range min={minYear} 
-               max={maxYear} 
-               tipFormatter={value => `${value}`} 
-               onChange={onSelectorChange} />
+        <div style={wrapperStyle}>
+            <h3 className="slider-label">Range</h3>
+            <Range min={minYear} 
+                   max={maxYear} 
+                   tipFormatter={value => `${value}`} 
+                   onChange={onSelectorChange} />
+        </div>
     );
 
 };

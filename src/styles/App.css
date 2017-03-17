@@ -1,9 +1,27 @@
+.App {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rc-slider {
+  margin-left: 90px;
+  width: inherit;
+}
 
 .rc-slider-tooltip-inner {
-  background-color: blue;
+  background-color: #307eae;
 }
 
 .rc-slider-tooltip-arrow {
-  border-top-color: blue !important;
+  border-top-color: #307eae !important;
 }
 
+.rc-slider-handle {
+  border: solid 2px #307eae;
+  background-color: #307eae;
+}
+
+.slider-label {
+  float: left;
+  margin-top: -8px;
+}
