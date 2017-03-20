@@ -24,7 +24,7 @@ export const BalanceGraph = ({capPercent, startYear, endYear, data}) => {
         var y = 600 - (price / 4);
 
         // Push the point to the S&P values array
-        spPoints.push({x, y});
+        spPoints.push({x, y, price});
 
         // Calculate the capped price
         var cappedPrice;
@@ -32,23 +32,28 @@ export const BalanceGraph = ({capPercent, startYear, endYear, data}) => {
         // Get the previous year's price to see if it needs to be capped
         var previousPrice = year === startYear
             ? price
+            : data.filter(entry => entry.year === year - 1)[0].price;
+
+        var previousCapPrice = year == startYear
+            ? price
             : data.filter(entry => entry.year === year - 1)[0].cappedPrice;
+
         var increasePercent = (price - previousPrice) / price;
 
         // Determine what the capped price should be
         if (increasePercent <= 0) {
-            cappedPrice = previousPrice;
+            cappedPrice = previousCapPrice;
         } else if (increasePercent < capPercent * .01) {
-            cappedPrice = price;
+            cappedPrice = previousCapPrice * (increasePercent + 1);
         } else {
-            cappedPrice = previousPrice * (capPercent * .01 + 1);
+            cappedPrice = previousCapPrice * (capPercent * .01 + 1);
         }
 
         // Calculate the y for the capped price (the x will be the same as the uncapped)
         y = 600 - (cappedPrice / 4);
 
         // Push the point to the capped values array
-        capPoints.push({x, y});
+        capPoints.push({x, y, cappedPrice});
 
         // Add the capped price value to the data array for use in next year's calculation
         data.filter(entry => entry.year === year)[0].cappedPrice = cappedPrice;

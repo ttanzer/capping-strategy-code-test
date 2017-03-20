@@ -60,6 +60,11 @@ class App extends Component {
                 endYear={endYear}
                 data={this.props.data}/>
               <Legend/>
+              <SegmentSummary
+                capPercent={capPercent}
+                startYear={startYear}
+                endYear={endYear}
+                data={this.props.data}/>
             </div>
           : <div className="invalid-entry">
               <h3>Please select a cap percentage, start and end year</h3>

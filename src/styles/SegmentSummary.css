@@ -1,0 +1,16 @@
+.segment-summary {
+    margin: 40px 50px;
+}
+
+.segment-summary table {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.segment-summary table th {
+    text-align: left;
+}
+
+.segment-summary table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
