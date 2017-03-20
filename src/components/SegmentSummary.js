@@ -23,15 +23,20 @@ export const SegmentSummary = ({capPercent, startYear, endYear, data}) => {
       ? price
       : data.filter(entry => entry.year === year - 1)[0].cappedPrice;
 
-    var increasePercent = (price - previousPrice) / price;
+    var increasePercent = (price - previousPrice) / previousPrice;
+
+    data.filter(entry => entry.year === year)[0].spIncrease = increasePercent;
 
     // Determine what the capped price should be
     if (increasePercent <= 0) {
       cappedPrice = previousCapPrice;
+      data.filter(entry => entry.year === year)[0].capIncrease = 0;
     } else if (increasePercent < capPercent * .01) {
       cappedPrice = previousCapPrice * (increasePercent + 1);
+      data.filter(entry => entry.year === year)[0].capIncrease = increasePercent;
     } else {
       cappedPrice = previousCapPrice * (capPercent * .01 + 1);
+      data.filter(entry => entry.year === year)[0].capIncrease = capPercent * .01;
     }
 
     // Add the capped price value to the data array for use in next year's calculation
@@ -67,9 +72,17 @@ export const SegmentSummary = ({capPercent, startYear, endYear, data}) => {
           {segments.map((segment, i) => 
             <tr>
               <td>{segment.year}</td>
-              <td>{segment.price}</td>
-              <td>{parseFloat(Math.round(segment.cappedPrice * 100) / 100).toFixed(2)}</td>
-              <td>{segment.price === segment.cappedPrice ? "Tie" : segment.price > segment.cappedPrice ? "S&P" : "Capped"}</td>
+              <td>
+                {segment.price} 
+                &nbsp;({parseFloat(Math.round(segment.spIncrease * 10000) / 100).toFixed(2)}%)
+              </td>
+              <td>
+                {parseFloat(Math.round(segment.cappedPrice * 100) / 100).toFixed(2)} 
+                &nbsp;({parseFloat(Math.round(segment.capIncrease * 10000) / 100).toFixed(2)}%)
+              </td>
+              <td>
+                {segment.price === segment.cappedPrice ? "Tie" : segment.price > segment.cappedPrice ? "S&P" : "Capped"}
+              </td>
             </tr>
           )}
         </tbody>

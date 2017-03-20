@@ -38,7 +38,7 @@ export const BalanceGraph = ({capPercent, startYear, endYear, data}) => {
             ? price
             : data.filter(entry => entry.year === year - 1)[0].cappedPrice;
 
-        var increasePercent = (price - previousPrice) / price;
+        var increasePercent = (price - previousPrice) / previousPrice;
 
         // Determine what the capped price should be
         if (increasePercent <= 0) {

@@ -7,27 +7,27 @@ import App from './components/App';
 
 // Hard coded data for now
 var data = [
-    { "year": 2016, "price": 2275.12 },
-    { "year": 2015, "price": 1918.60 },
-    { "year": 2014, "price": 2028.18 },
-    { "year": 2013, "price": 1822.36 },
-    { "year": 2012, "price": 1480.40 },
-    { "year": 2011, "price": 1300.58 },
-    { "year": 2010, "price": 1282.62 },
-    { "year": 2009, "price": 1123.58 },
-    { "year": 2008, "price": 865.58 },
-    { "year": 2007, "price": 1378.76 },
-    { "year": 2006, "price": 1424.16 },
-    { "year": 2005, "price": 1278.73 },
-    { "year": 2004, "price": 1181.41 },
-    { "year": 2003, "price": 1132.52 },
-    { "year": 2002, "price": 895.84 },
-    { "year": 2001, "price": 1140.21 },
-    { "year": 2000, "price": 1335.63 },
-    { "year": 1999, "price": 1425.59 },
-    { "year": 1998, "price": 1248.77 },
-    { "year": 1997, "price": 963.36 },
-    { "year": 1996, "price": 766.22 }
+    { "year": 2016, "price": 2238.83 },
+    { "year": 2015, "price": 2043.94 },
+    { "year": 2014, "price": 2058.90 },
+    { "year": 2013, "price": 1848.36 },
+    { "year": 2012, "price": 1426.19 },
+    { "year": 2011, "price": 1257.60 },
+    { "year": 2010, "price": 1257.64 },
+    { "year": 2009, "price": 1115.10 },
+    { "year": 2008, "price": 903.25 },
+    { "year": 2007, "price": 1468.36 },
+    { "year": 2006, "price": 1418.30 },
+    { "year": 2005, "price": 1248.29 },
+    { "year": 2004, "price": 1211.92 },
+    { "year": 2003, "price": 1111.92 },
+    { "year": 2002, "price": 879.82 },
+    { "year": 2001, "price": 1148.08 },
+    { "year": 2000, "price": 1320.28 },
+    { "year": 1999, "price": 1469.25 },
+    { "year": 1998, "price": 1229.23 },
+    { "year": 1997, "price": 970.43 },
+    { "year": 1996, "price": 740.74 }
 ];
 
 // Render the main application node
